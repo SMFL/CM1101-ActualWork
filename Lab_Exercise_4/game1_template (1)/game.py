@@ -6,13 +6,7 @@ import string
 
 def remove_punct(text):
 
-    punctuation = ["!", '"', "'", "£", "$", "%", "^", "&", "*", "&", "(", ")", "-", "+", "[", "]", "{", "]", "#", "~", "@", ";", ":", "<", ">", ",", ".", "/", "?", "|"]
-    Improved_Text = ""
-    for char_Int in range(0, len(text)):
-        if text[char_Int] not in punctuation:
-            Improved_Text += text[char_Int]
 
-    return Improved_Text
 
     """This function is used to remove all punctuation
     marks from a string. Spaces do not count as punctuation and should
@@ -27,24 +21,35 @@ def remove_punct(text):
     'goSouTh'
     """
 
+    punctuation = ["!", '"', "'", "£", "$", "%", "^", "&", "*", "&", "(", ")", "-", "+", "[", "]", "{", "]", "#", "~", "@", ";", ":", "<", ">", ",", ".", "/", "?", "|"]
+    Improved_Text = ""
+    for char_Int in range(0, len(text)):
+        if text[char_Int] not in punctuation:
+            Improved_Text += text[char_Int]
 
+    return Improved_Text
 
     # The pass statement does nothing. Replace it with the body of your function.
     
     
 def remove_spaces(text):
 
-    Improved_Text = ""
- 
-    """for char_Int in range(0, len(text)):
-        if text[char_Int] != " ":
-            if (char_Int != 0 and char_Int != len(text)):
-                if(text[char_Int - 1] ==  " "  or text[char_Int + 1] ==  " " ):
-                    Improved_Text += text[char_Int]
-            else:
-                Improved_Text += text[char_Int]
+    """This function is used to remove leading and trailing spaces from a string.
+    It takes a string and returns a new string with does not have leading and
+    trailing spaces. For example:
 
+    >>> remove_spaces("  Hello!  ")
+    'Hello!'
+    >>> remove_spaces("  Python  is  easy!   ")
+    'Python  is  easy!'
+    >>> remove_spaces("Python is easy!")
+    'Python is easy!'
+    >>> remove_spaces("")
+    ''
+    >>> remove_spaces("   ")
+    ''
     """
+    Improved_Text = ""
     WordStarted = False
 
     for char_Int in range(0, len(text)):
@@ -66,24 +71,6 @@ def remove_spaces(text):
 
 
     return Improved_Text[0: len(Improved_Text) - DeleteCount]
-
-    """This function is used to remove leading and trailing spaces from a string.
-    It takes a string and returns a new string with does not have leading and
-    trailing spaces. For example:
-
-    >>> remove_spaces("  Hello!  ")
-    'Hello!'
-    >>> remove_spaces("  Python  is  easy!   ")
-    'Python  is  easy!'
-    >>> remove_spaces("Python is easy!")
-    'Python is easy!'
-    >>> remove_spaces("")
-    ''
-    >>> remove_spaces("   ")
-    ''
-    """
-
-
 
 
 
